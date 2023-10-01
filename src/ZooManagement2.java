@@ -10,27 +10,39 @@ public class ZooManagement2 {
         lion.age    =10;
         lion.isMammal=true;
 
-        Zoo myZoo = new Zoo();
-        myZoo.name="bilvidaire";
-        myZoo.city="wost-lebled";
-        myZoo.nbrCages=25;
-        myZoo.animals= new Animal[25];
+        Zoo Zoo1 = new Zoo();
+        Zoo1.name="bilvidaire";
+        Zoo1.city="wost-lebled";
+
+        Zoo Zoo2 = new Zoo();
+        Zoo2.name="marhbee";
+        Zoo2.city="jerba";
 
         Animal cat = new Animal("chara3", "t7ifaa", 4, true);
-        myZoo.displayZoo();
-        System.out.println(myZoo);
-        System.out.println(myZoo.toString());
 
-        System.out.println(myZoo.addAnimal(lion));
-        System.out.println(myZoo.addAnimal(cat));
+        System.out.println(Zoo1.addAnimal(lion));
+        System.out.println(Zoo2.addAnimal(cat));
 
-        myZoo.displayAnimals();
-        System.out.println(myZoo.searchAnimal(lion));
-        Animal elephant = new Animal("metwahech", "sa3ida", 10, true);
-        System.out.println(myZoo.addAnimal(elephant));
-        System.out.println(myZoo.searchAnimal(elephant));
-        myZoo.displayAnimals();
-        System.out.println(myZoo.removeAnimal(cat));
-        myZoo.displayAnimals();
+        Zoo1.displayAnimals();
+        System.out.println(Zoo1.searchAnimal(cat));
+        Animal cat2 = new Animal("Canine", "lll", 2, true);
+        System.out.println(Zoo1.searchAnimal(cat2));
+
+        //   System.out.println(Zoo1.removeAnimal(cat));
+        Zoo1.displayAnimals();
+
+
+        System.out.println(Zoo1);
+
+        Zoo1.addAnimal(lion);
+        Zoo1.addAnimal(cat);
+        Zoo1.addAnimal(cat2);
+        Zoo1.displayAnimals();
+        System.out.println(Zoo1.removeAnimal(lion));
+        Zoo1.displayAnimals();
+
+        System.out.println(Zoo.comparerZoo(Zoo1, Zoo2));
+        System.out.println(Zoo1.isZooFull());
+
     }
     }
