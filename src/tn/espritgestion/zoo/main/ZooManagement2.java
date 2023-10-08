@@ -1,3 +1,8 @@
+package tn.espritgestion.zoo.main;
+
+import tn.espritgestion.zoo.entities.Animal;
+import tn.espritgestion.zoo.entities.Zoo;
+
 // Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
 // then press Enter. You can now see whitespace characters in your code.
 public class ZooManagement2 {

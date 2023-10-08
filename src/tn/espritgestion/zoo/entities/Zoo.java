@@ -1,6 +1,8 @@
+package tn.espritgestion.zoo.entities;
+
 public class Zoo {
-    Animal [] animals;
-    String name, city;
+    public Animal [] animals;
+    public String name, city;
     static final int nbrCages = 25;
     int NbrAnimals;
     public Zoo() {
@@ -14,34 +16,35 @@ public class Zoo {
 
 
 
-    static Zoo comparerZoo(Zoo z1, Zoo z2) {
+    public static Zoo comparerZoo(Zoo z1, Zoo z2) {
         if (z1.NbrAnimals > z2.NbrAnimals)
             return z1;
         return z2;
     }
 
 
-    void displayZoo() {
+    public void displayZoo() {
         System.out.println("| the Name: " + name + " | the City: " + city + " | nbrCages: " + nbrCages +" |");
     }
-    boolean addAnimal(Animal animal){
-        if(searchAnimal(animal) != -1)
-            return false;
-        if(nbrCages == NbrAnimals)
-            return false;
-        animals[NbrAnimals]= animal;
-        NbrAnimals++;
-        return true;
+    public boolean addAnimal(Animal animal){
+        if(!isZooFull()) {
+            if (searchAnimal(animal) != -1)
+                return false;
+            animals[NbrAnimals] = animal;
+            NbrAnimals++;
+            return true;
+        }
+    return false;
     }
 
-    void displayAnimals() {
+    public void displayAnimals() {
         System.out.println("Liste des animaux de " + name + ":");
         for (int i = 0; i < NbrAnimals; i++) {
             System.out.println(animals[i].name);
         }
     }
 
-    int searchAnimal(Animal animal){
+    public int searchAnimal(Animal animal){
         int p = -1 ;
         for (int i = 0; i < NbrAnimals; i++) {
             if(animal.name.equals(animals[i].name)){
@@ -51,12 +54,12 @@ public class Zoo {
         return  p;
     }
 
-    boolean isZooFull() {
+    public boolean isZooFull() {
         return NbrAnimals == nbrCages;
     }
 
 
-    boolean removeAnimal(Animal animal){
+    public boolean removeAnimal(Animal animal){
         int p = searchAnimal(animal);
         if(p == -1)
             return false;
